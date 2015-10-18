@@ -28,7 +28,10 @@ function addValue(obj, key, val) {
 }
 
 var ReactDefaultPerf = {
-  _allMeasurements: [], // last item in the list is the current one
+  _allMeasurements: [], // last item in the list is the current one,
+  // TODO: can we track if methods invoked by a render on the component
+  // vs. invoked by a render cascade from a parent component
+  _lifecycleMeasurements: {}, // keys are components w/ keys for defined lifecycles
   _mountStack: [0],
   _injected: false,
 
