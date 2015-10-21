@@ -16,6 +16,7 @@ var ReactElement = require('ReactElement');
 var ReactPropTypeLocations = require('ReactPropTypeLocations');
 var ReactPropTypeLocationNames = require('ReactPropTypeLocationNames');
 var ReactNoopUpdateQueue = require('ReactNoopUpdateQueue');
+var ReactPerf = require('ReactPerf');
 
 var assign = require('Object.assign');
 var emptyObject = require('emptyObject');
@@ -899,7 +900,7 @@ var ReactClass = {
     for (var methodName in ReactClassInterface) {
       if (!Constructor.prototype[methodName]) {
         Constructor.prototype[methodName] = null;
-      else if (__DEV__) {
+      } else if (__DEV__) {
         Constructor.prototype[methodName] = ReactPerf.measure(
           'ReactClass', methodName, Constructor.prototype[methodName]
         );

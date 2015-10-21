@@ -269,9 +269,10 @@ var ReactDefaultPerf = {
 
         return rv;
       } else if (moduleName === 'ReactClass') {
+        // TODO: should this be ReactClass above or will it be instance of RCC ^^^
         // Only methods that should be coming in here are the methods we wrapped
         // in DEV from ReactClass
-        // TODO: this.react_id isnt a real thing
+        // TODO: this.react_id doesnt exist i dont think
         if (!ReactDefaultPerf._lifecycleMeasurements[this.react_id]) {
           ReactDefaultPerf._lifecycleMeasurements[this.react_id] = {};
 
