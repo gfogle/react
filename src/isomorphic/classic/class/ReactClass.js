@@ -901,9 +901,11 @@ var ReactClass = {
       if (!Constructor.prototype[methodName]) {
         Constructor.prototype[methodName] = null;
       } else if (__DEV__) {
-        Constructor.prototype[methodName] = ReactPerf.measure(
-          'ReactClass', methodName, Constructor.prototype[methodName]
-        );
+        if (Constructor.prototype[methodName]) {
+          Constructor.prototype[methodName] = ReactPerf.measure(
+            'ReactClass', methodName, Constructor.prototype[methodName]
+          );
+        }
       }
     }
 
